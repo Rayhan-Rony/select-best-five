@@ -16,7 +16,8 @@ function showSelected(selectedPlayer) {
 }
 function selection(selected) {
 
-    // get the player Name 
+    // get the player Name
+
 
     const playerName = selected.parentNode.children[0].innerText;
 
@@ -25,8 +26,17 @@ function selection(selected) {
     }
     // console.log(playerObj);
 
-    selectionArray.push(playerObj);
+
     // console.log(selectionArray.length);
+    if (selectionArray.length < 5) {
+        selectionArray.push(playerObj);
+    }
+    else {
+        alert('you can not add more than 5 player')
+    }
 
     showSelected(selectionArray);
+
+    // disable after one click 
+    selected.disabled = true;
 }

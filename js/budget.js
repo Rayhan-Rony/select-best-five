@@ -21,7 +21,7 @@ document.getElementById('btn-calculate').addEventListener('click', function () {
     const playerExpenses = perPlayerPrice * 5;
     getTextElementValueById.innerText = playerExpenses;
 
-    return playerExpenses;
+
 
 })
 
