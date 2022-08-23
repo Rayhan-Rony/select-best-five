@@ -1,13 +1,9 @@
-
 const selectionArray = [];
-
 function showSelected(selectedPlayer) {
-
     const selected = document.getElementById('selected');
     selected.innerHTML = "";
     for (let i = 0; i < selectedPlayer.length; i++) {
         const selectedPlayerName = selectionArray[i].playerName;
-        // console.log(selectedPlayerName)
         const li = document.createElement('li');
         li.innerText = selectedPlayerName;
 
@@ -15,28 +11,20 @@ function showSelected(selectedPlayer) {
     }
 }
 function selection(selected) {
-
-    // get the player Name
-
-
     const playerName = selected.parentNode.children[0].innerText;
-
     const playerObj = {
         playerName: playerName,
     }
-    // console.log(playerObj);
-
-
-    // console.log(selectionArray.length);
+    selected.disabled = true;
     if (selectionArray.length < 5) {
         selectionArray.push(playerObj);
     }
     else {
         alert('you can not add more than 5 player')
+        selected.disabled = false;
     }
 
     showSelected(selectionArray);
 
-    // disable after one click 
-    selected.disabled = true;
+
 }
