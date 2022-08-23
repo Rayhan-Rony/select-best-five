@@ -1,4 +1,5 @@
 const selectionArray = [];
+
 function showSelected(selectedPlayer) {
     const selected = document.getElementById('selected');
     selected.innerHTML = "";
@@ -25,6 +26,10 @@ function selection(selected) {
     }
 
     showSelected(selectionArray);
+
+    document.getElementById('selected-player-number').innerText = selectionArray.length;
+
+
 
 
 }
